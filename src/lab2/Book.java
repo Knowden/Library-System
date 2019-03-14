@@ -17,7 +17,7 @@ public class Book {
         this.title = title;
         this.author = author;
         this.price = price;
-        if (!isLegal()) {
+        if (isIllegal()) {
             throw new IllegalArgumentException("Argument Illegal!");
         }
     }
@@ -62,11 +62,11 @@ public class Book {
         return isbn.equals(compareBook.isbn);
     }
 
-    public boolean isLegal() {
+    public boolean isIllegal() {
         boolean isbnLegal = isbn.checkISBN();
-        boolean authorLegal = ( author != null);
-        boolean priceLegal = (price != null);
-        boolean titleLegal = (title != null);
-        return !(isbnLegal && authorLegal && priceLegal && titleLegal);
+        boolean authorIllegal = author == null;
+        boolean priceIllegal = price == null;
+        boolean titleIllegal = title == null;
+        return !isbnLegal || authorIllegal || priceIllegal || titleIllegal;
     }
 }

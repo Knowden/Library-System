@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28cbabc2-a014-4350-be0a-8072e68bbe32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lab2/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab2/ISBN.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab2/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab2/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab2/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/Library.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,19 +17,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lab2/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="506">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="e#194#195#0" expanded="true" />
                 <element signature="e#211#212#0" expanded="true" />
-                <element signature="e#600#601#0" expanded="true" />
-                <element signature="e#660#661#0" expanded="true" />
-                <element signature="e#722#723#0" expanded="true" />
-                <element signature="e#786#787#0" expanded="true" />
-                <element signature="e#862#863#0" expanded="true" />
-                <element signature="e#942#943#0" expanded="true" />
-                <element signature="e#1022#1023#0" expanded="true" />
-                <element signature="e#1349#1350#0" expanded="true" />
+                <element signature="e#601#602#0" expanded="true" />
+                <element signature="e#661#662#0" expanded="true" />
+                <element signature="e#723#724#0" expanded="true" />
+                <element signature="e#787#788#0" expanded="true" />
+                <element signature="e#863#864#0" expanded="true" />
+                <element signature="e#943#944#0" expanded="true" />
+                <element signature="e#1023#1024#0" expanded="true" />
+                <element signature="e#1350#1351#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -40,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab2/Library.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+            <state relative-caret-position="1744">
+              <caret line="68" column="44" lean-forward="true" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#295#296#0" expanded="true" />
@@ -69,8 +67,8 @@
         <option value="$PROJECT_DIR$/src/lab1/Book.java" />
         <option value="$PROJECT_DIR$/src/lab1/ISBN.java" />
         <option value="$PROJECT_DIR$/src/lab2/ISBN.java" />
-        <option value="$PROJECT_DIR$/src/lab2/Library.java" />
         <option value="$PROJECT_DIR$/src/lab2/Book.java" />
+        <option value="$PROJECT_DIR$/src/lab2/Library.java" />
       </list>
     </option>
   </component>
@@ -97,12 +95,6 @@
               <item name="21-oo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="21-oo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="21-oo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lab2" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -113,7 +105,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552573866395" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552574306457" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
@@ -145,15 +137,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552566806569</updated>
-      <workItem from="1552566810285" duration="5428000" />
+      <workItem from="1552566810285" duration="5904000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5428000" />
+    <option name="totallyTimeSpent" value="5904000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
@@ -161,7 +153,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14872068" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14872068" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CheckStyle" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -170,7 +162,7 @@
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -247,8 +239,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lab2/Library.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+        <state relative-caret-position="1744">
+          <caret line="68" column="44" lean-forward="true" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#295#296#0" expanded="true" />
@@ -259,19 +251,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lab2/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        <state relative-caret-position="506">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="e#194#195#0" expanded="true" />
             <element signature="e#211#212#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#660#661#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-            <element signature="e#1022#1023#0" expanded="true" />
-            <element signature="e#1349#1350#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#661#662#0" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+            <element signature="e#1350#1351#0" expanded="true" />
           </folding>
         </state>
       </provider>

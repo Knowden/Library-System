@@ -53,7 +53,7 @@ public class Library {
     }
 
     public void addBook(Book addBook) throws IllegalArgumentException{
-        if (addBook.getClass() != Book.class || !addBook.isLegal()) {
+        if (addBook.getClass() != Book.class || !addBook.isIllegal()) {
             throw new IllegalArgumentException("Book info is Wrong!");
         }
         else {

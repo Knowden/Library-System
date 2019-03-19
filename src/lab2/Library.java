@@ -1,17 +1,25 @@
 package lab2;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Library {
+    private static Library onlyInstance;
     private ArrayList<Book> books = new ArrayList<>();
     private HashMap<ISBN, Integer> amount = new HashMap<>();
+    private ArrayList<Record> records = new ArrayList<>();
 
-    public Library() {
+    private Library() {
         super();
+    }
+
+    public static Library getInstance() {
+        if (onlyInstance == null) {
+            onlyInstance = new Library();
+        }
+        return onlyInstance;
     }
 
     public Book getBookByIsbn(ISBN isbn) throws IllegalArgumentException{
@@ -52,8 +60,12 @@ public class Library {
         return keyWordBooks;
     }
 
+    public int checkLeft(ISBN isbn) {
+        return amount.
+    }
+
     public void addBook(Book addBook) throws IllegalArgumentException{
-        if (addBook.getClass() != Book.class || !addBook.isIllegal()) {
+        if (addBook.getClass() != Book.class) {
             throw new IllegalArgumentException("Book info is Wrong!");
         }
         else {
@@ -75,6 +87,7 @@ public class Library {
         return false;
     }
 
+    /*
     public void changeAuthor(ISBN isbn, String author) throws IllegalArgumentException {
         if (!isbn.checkISBN() || author == null) {
             throw new IllegalArgumentException("ISBN WRONG!");
@@ -122,7 +135,5 @@ public class Library {
             }
         }
     }
-
-
-
+    */
 }

@@ -5,11 +5,6 @@ import java.util.regex.Pattern;
 public class ISBN {
     final private String isbn;
 
-    public ISBN() {
-        super();
-        isbn = "";
-    }
-
     public ISBN(String isbn) throws IllegalArgumentException{
         this.isbn = isbn.replaceAll("-", "");
         if (!checkISBN()) {

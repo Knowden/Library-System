@@ -1,25 +1,35 @@
 package lab2;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 public class Book {
     private ISBN isbn;
     private String title;
     private String author;
     private BigDecimal price;
-
-    public Book() {
-        super();
-    }
-
-    public Book(ISBN isbn, String title, String author, BigDecimal price) throws IllegalArgumentException{
+    private static ArrayList<Book> bookList = new ArrayList<>();
+    
+    private Book(ISBN isbn, String title, String author, BigDecimal price) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
         this.price = price;
-        if (isIllegal()) {
-            throw new IllegalArgumentException("Argument Illegal!");
+    }
+
+    public Book getInstance(ISBN isbn, String title, String author, BigDecimal price) throws IllegalArgumentException{
+        if(isIllegal(isbn, title, author, price)) {
+            throw new IllegalArgumentException("Book Info Error!");
         }
+        for (Book book : bookList) {
+            if(book.isbn.equals(isbn)) {
+                
+                return book;
+            }
+        }
+        Book newBook = new Book(isbn, title, author, price);
+        bookList.add(newBook);
+        return newBook;
     }
 
     public ISBN getIsbn() {
@@ -62,7 +72,7 @@ public class Book {
         return isbn.equals(compareBook.isbn);
     }
 
-    public boolean isIllegal() {
+    public boolean isIllegal(ISBN isbn, String title, String author, BigDecimal price) {
         boolean isbnLegal = isbn.checkISBN();
         boolean authorIllegal = author == null;
         boolean priceIllegal = price == null;

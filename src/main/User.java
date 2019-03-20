@@ -10,14 +10,33 @@ import java.util.ArrayList;
 public class User {
 
     private String name;
-    private int age;
     private String stuId;
     private ArrayList<Record> borrowed = new ArrayList<>();
 
-    public User(String name, String stuId, int age) {
+    private static ArrayList<User> userList = new ArrayList<>();
+
+    private User(String name, String stuId) {
         this.name = name;
         this.stuId = stuId;
-        this.age = age;
+    }
+
+    public static User getInstance(String name, String stuId) throws IllegalArgumentException{
+        if (infoIllegal(name, stuId)) {
+            throw new IllegalArgumentException("Info Error!");
+        }
+        for (User user : userList) {
+            if (user.stuId.equals(stuId)) {
+                return user;
+            }
+        }
+        User newUser = new User(name, stuId);
+        userList.add(newUser);
+        return newUser;
+    }
+
+    private static boolean infoIllegal(String name, String stuId) {
+        return name == null || stuId == null ||
+                name.equals("") || stuId.equals("");
     }
 
     public void borrowBook(Book toBorrow, Date date) {

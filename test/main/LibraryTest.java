@@ -50,7 +50,7 @@ public class LibraryTest {
     @org.junit.Test
     public void borrowBook() {
         Book book = library.getBookByIsbn(new ISBN("9787040266511"));
-        library.borrowBook(new User("123","123", 1), book, Server.today);
+        library.borrowBook(User.getInstance("123","123"), book, Server.today);
     }
 
     @org.junit.Test

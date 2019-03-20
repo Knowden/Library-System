@@ -1,7 +1,6 @@
 package main;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * 21-oo
@@ -9,14 +8,26 @@ import java.util.ArrayList;
  * Original author: Nocturne
  */
 public class Simulate {
+    private static User user;
     private static Server server = new Server();
 
     public static void main(String[] args) {
-        server.addLib(new Library("ShaHe"));
-        server.addBook(Book.getInstance(new ISBN("9787040266511"),"haha", "pity", BigDecimal.ONE), 0);
-        ArrayList<Book> books = server.inquireBooks(InquireType.KEYWORD, "haha");
-        for (Book book : books) {
-            System.out.println(book);
+        run();
+    }
+
+    private static void run() {
+        while (user == null) {
+            try {
+                Scanner keyBoard = new Scanner(System.in);
+                System.out.println("请输入ID");
+                String stuId = keyBoard.nextLine();
+                System.out.println("请输入用户名");
+                String name = keyBoard.nextLine();
+                user = User.getInstance(name, stuId);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+        System.out.println(user);
     }
 }

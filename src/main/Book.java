@@ -40,6 +40,10 @@ public class Book {
         return author;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     @Override
     public String toString() {
         System.out.println("Title: " + title);

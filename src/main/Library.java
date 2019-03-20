@@ -41,7 +41,7 @@ public class Library {
                 continue;
             }
 
-            matcher = key.matcher(book.getAuthor());
+            matcher = key.matcher(book.getTitle());
             if (matcher.find()) {
                 keyWordBooks.add(book);
                 continue;

@@ -1,4 +1,4 @@
-package lab2;
+package main;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,20 +6,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Library {
-    private static Library onlyInstance;
+    private String name;
     private ArrayList<Book> books = new ArrayList<>();
-    private HashMap<ISBN, Integer> amount = new HashMap<>();
-    private ArrayList<Record> records = new ArrayList<>();
+    private HashMap<Book, Integer> amount = new HashMap<>();
+    private HashMap<Book, Integer> left = new HashMap<>();
+    private HashMap<Book, ArrayList<Record>> records = new HashMap<>();
 
-    private Library() {
+    public Library(String name) {
         super();
-    }
-
-    public static Library getInstance() {
-        if (onlyInstance == null) {
-            onlyInstance = new Library();
-        }
-        return onlyInstance;
+        this.name = name;
     }
 
     public Book getBookByIsbn(ISBN isbn) throws IllegalArgumentException{
@@ -60,31 +55,59 @@ public class Library {
         return keyWordBooks;
     }
 
-    public int checkLeft(ISBN isbn) {
-        return amount.
-    }
-
     public void addBook(Book addBook) throws IllegalArgumentException{
         if (addBook.getClass() != Book.class) {
-            throw new IllegalArgumentException("Book info is Wrong!");
+            throw new IllegalArgumentException("Book Info Is Wrong!");
         }
         else {
-            if (isInLab(addBook)) {
-                amount.put(addBook.getIsbn(), amount.get(addBook.getIsbn()) + 1);
+            if (amount.containsKey(addBook)) {
+                amount.put(addBook, amount.get(addBook) + 1);
+                left.put(addBook, left.get(addBook) + 1);
             } else {
-                amount.put(addBook.getIsbn(), 1);
+                amount.put(addBook, 1);
+                left.put(addBook, 1);
                 books.add(addBook);
             }
         }
     }
 
-    private boolean isInLab(Book findBook) {
-        for (Book book : books) {
-            if (book.equals(findBook)) {
-                return true;
-            }
+    public Record borrowBook(User borrower,Book toBorrow, Date date) throws IllegalArgumentException {
+        if (!books.contains(toBorrow)) {
+            throw new IllegalArgumentException("THE BOOK NOT EXIST!");
         }
-        return false;
+        int leftNum = left.get(toBorrow);
+        if (leftNum == 0) {
+            throw new IllegalArgumentException("THERE IS NO LEFT!");
+        }
+        left.put(toBorrow, left.get(toBorrow) - 1);
+        if (!records.containsKey(toBorrow)) {
+            records.put(toBorrow, new ArrayList<>());
+        }
+        Record borrowReacord = new Record(borrower, toBorrow, date);
+        records.get(toBorrow).add(borrowReacord);
+        return borrowReacord;
+    }
+
+    public void returnBook(Record borrowRecord) throws IllegalArgumentException{
+        Book borrowBook = borrowRecord.book();
+        if (!books.contains(borrowBook)) {
+            throw new IllegalArgumentException("BOOK IS NOT EXIST!");
+        }
+        if (records.get(borrowBook) != null) {
+            if (!records.get(borrowBook).contains(borrowRecord)) {
+                throw new IllegalArgumentException("NOT BORROW FROM HERE!");
+            }
+            records.get(borrowBook).remove(borrowRecord);
+            left.put(borrowBook, left.get(borrowBook) + 1);
+        }
+        else {
+            throw new IllegalArgumentException("NOT BORROW FROM HERE!");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s Library", name);
     }
 
     /*

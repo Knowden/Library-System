@@ -1,4 +1,4 @@
-package lab2;
+package main;
 
 public class Date {
     private int year;

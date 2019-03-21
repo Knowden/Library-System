@@ -44,6 +44,10 @@ public class Book {
         return title;
     }
 
+    public BigDecimal getPrice() {
+        return price;
+    }
+
     @Override
     public String toString() {
         System.out.println("Title: " + title);

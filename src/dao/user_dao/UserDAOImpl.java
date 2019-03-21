@@ -64,7 +64,7 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
                 throw new IllegalArgumentException("User Already Exist!");
             }
             String addSql = "INSERT INTO User VALUES (?, ?)";
-            Object param[] = new Object[2];
+            Object[] param = new Object[2];
             param[0] = user.getUserId();
             param[1] = user.getName();
             executeSQL(addSql, param);

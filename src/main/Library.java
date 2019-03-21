@@ -36,6 +36,10 @@ public class Library {
 
     public void borrowBook(User borrower,Book toBorrow, Date date) throws IllegalArgumentException {
         BookDaoImpl bImpl = new BookDaoImpl();
+        if (bImpl.checkLeft(toBorrow) <= 0) {
+            throw new IllegalArgumentException("This Book Not Left!");
+        }
+
         bImpl.takeOneBook(toBorrow);
 
         int bookId = bImpl.getIdByISBN(toBorrow.getIsbn());

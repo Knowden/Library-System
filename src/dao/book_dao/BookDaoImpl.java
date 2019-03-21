@@ -22,16 +22,16 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     public void addBook(Book book) {
         try {
             Connection connect = getConnection();
-            String checkSql = "SELECT * FROM Book WHERE book_name = ?";
+            String checkSql = "SELECT * FROM Book WHERE book_isbn = ?";
             PreparedStatement check = connect.prepareStatement(checkSql);
-            check.setObject(1, book.getName());
+            check.setObject(1, book.getIsbn().toString());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
                 int amount = rst.getInt("book_amount") + 1;
-                String updateSql = "UPDATE Book SET book_amount = ? WHERE book_name = ?";
+                String updateSql = "UPDATE Book SET book_amount = ? WHERE book_isbn = ?";
                 Object[] param = new Object[2];
                 param[0] = amount;
-                param[1] = book.getName();
+                param[1] = book.getIsbn().toString();
                 executeSQL(updateSql, param);
             }
             else {
@@ -54,10 +54,9 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     public int checkLeft(Book book) throws IllegalArgumentException {
         try {
             Connection connect = getConnection();
-            ISBN isbn = book.getIsbn();
             String checkSql = "SELECT book_amount FROM Book WHERE book_isbn = ?";
             PreparedStatement check = connect.prepareStatement(checkSql);
-            check.setObject(1, isbn.toString());
+            check.setObject(1, book.getIsbn().toString());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
                 return rst.getInt("book_amount");
@@ -75,17 +74,16 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     public void takeOneBook(Book book) throws IllegalArgumentException {
         try {
             Connection connect = getConnection();
-            ISBN isbn = book.getIsbn();
-            String checkSql = "SELECT * FROM Book WHERE book_isbn = ?";
+            String checkSql = "SELECT book_left FROM Book WHERE book_isbn = ?";
             PreparedStatement check = connect.prepareStatement(checkSql);
-            check.setObject(1, isbn.toString());
+            check.setObject(1, book.getIsbn().toString());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
                 int left = rst.getInt("book_left");
                 String takeSql = "UPDATE Book SET book_left = ? WHERE book_isbn = ?";
                 Object[] param = new Object[2];
                 param[0] = left - 1;
-                param[1] = isbn.toString();
+                param[1] = book.getIsbn().toString();
                 executeSQL(takeSql, param);
             } else {
                 throw new IllegalArgumentException("Book Not Exist!");
@@ -158,7 +156,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
             if (rst.next()) {
                 return rst.getInt("book_id");
             } else {
-                throw new IllegalArgumentException("Book Not Found!");
+                throw new IllegalArgumentException("ISBN Not Found!");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -179,7 +177,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
                 return getBookByISBN(new ISBN(isbn));
             }
             else {
-                throw new IllegalArgumentException("Book Not Found!");
+                throw new IllegalArgumentException("ID Not Found!");
             }
         } catch (SQLException e) {
             e.printStackTrace();

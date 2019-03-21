@@ -20,9 +20,10 @@ public class Simulate {
             try {
                 Scanner keyBoard = new Scanner(System.in);
                 System.out.println("请输入ID");
-                String stuId = keyBoard.nextLine();
+                int stuId = Integer.parseInt(keyBoard.nextLine());
                 System.out.println("请输入用户名");
                 String name = keyBoard.nextLine();
+                user = new User(name, stuId);
             } catch (Exception e) {
                 e.printStackTrace();
             }

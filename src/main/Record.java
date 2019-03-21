@@ -1,33 +1,57 @@
 package main;
 
+import dao.book_dao.BookDaoImpl;
+import dao.user_dao.UserDAOImpl;
+
 public class Record {
-    private Book book;
-    private User borrower;
+    private int bookId;
+    private int userId;
     private Date borrowDate;
-    private int leftDay;
+    private Date returnDate;
 
-    public Record(User borrower, Book book, Date borrowDate, int leftDay) {
-        this.borrower = borrower;
-        this.book = book;
+    public Record(int userId, int bookId, Date borrowDate, int borrowDays) {
+        this.userId = userId;
+        this.bookId = bookId;
         this.borrowDate = borrowDate;
-        this.leftDay = leftDay;
+        this.returnDate = borrowDate.addDay(borrowDays);
     }
 
-    public Record(User borrower, Book book, Date borrowDate) {
-        this.borrower = borrower;
-        this.book = book;
+    public Record(int userId, int bookId, Date borrowDate, Date returnDate) {
+        this.userId = userId;
+        this.bookId = bookId;
         this.borrowDate = borrowDate;
-        this.leftDay = 30;
+        this.returnDate = returnDate;
     }
 
-    public Book book() {
-        return book;
+    public Record(int userId, int bookId, Date borrowDate) {
+        this.userId = userId;
+        this.bookId = bookId;
+        this.borrowDate = borrowDate;
+        this.returnDate = borrowDate.addDay(30);
+    }
+
+    public int getBookId() {
+        return bookId;
+    }
+
+    public Date getBorrowDate() {
+        return borrowDate;
+    }
+
+    public Date getReturnDate() {
+        return returnDate;
+    }
+
+    public int getUserId() {
+        return userId;
     }
 
     @Override
     public String toString() {
-        String bookInfo = book.toString();
-        Date exceptedDate = borrowDate.addDay(leftDay);
-        return String.format("%s\n%s\nExpectedDate is %s",borrower.toString(), bookInfo, exceptedDate);
+        BookDaoImpl bImpl = new BookDaoImpl();
+        Book book = bImpl.getBookById(bookId);
+        UserDAOImpl uImpl = new UserDAOImpl();
+        User user = uImpl.getUserById(userId);
+        return String.format("%s\n%s\nExpectedDate is %s", user.toString(), book.toString(), returnDate);
     }
 }

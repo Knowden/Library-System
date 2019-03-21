@@ -1,4 +1,4 @@
-package dao;
+package dao.book_dao;
 
 import main.Book;
 import main.ISBN;
@@ -14,10 +14,16 @@ public interface BookDao {
 
     public void addBook(Book book);
 
-    public void TakeOneBook(Book book);
+    public void takeOneBook(Book book);
 
     public Book getBookByISBN(ISBN isbn);
 
-    public ArrayList<Book> getBookByKeyWord(String keyWord);
+    public ArrayList<Book> getBooksByKeyWord(String keyWord);
+
+    public int checkLeft(Book book);
+
+    public int getIdByISBN(ISBN isbn);
+
+    public Book getBookById(int id);
 
 }

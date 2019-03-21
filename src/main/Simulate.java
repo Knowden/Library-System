@@ -23,7 +23,6 @@ public class Simulate {
                 String stuId = keyBoard.nextLine();
                 System.out.println("请输入用户名");
                 String name = keyBoard.nextLine();
-                user = User.getInstance(name, stuId);
             } catch (Exception e) {
                 e.printStackTrace();
             }

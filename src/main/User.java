@@ -10,35 +10,29 @@ import java.util.ArrayList;
 public class User {
 
     private String name;
-    private String stuId;
-    private ArrayList<Record> borrowed = new ArrayList<>();
+    private int userId;
 
-    private static ArrayList<User> userList = new ArrayList<>();
-
-    private User(String name, String stuId) {
+    public User(String name, int userId) throws IllegalArgumentException{
+        if (infoIllegal(name, userId)) {
+            throw new IllegalArgumentException("User Info Error!");
+        }
         this.name = name;
-        this.stuId = stuId;
+        this.userId = userId;
     }
 
-    public static User getInstance(String name, String stuId) throws IllegalArgumentException{
-        if (infoIllegal(name, stuId)) {
-            throw new IllegalArgumentException("Info Error!");
-        }
-        for (User user : userList) {
-            if (user.stuId.equals(stuId)) {
-                return user;
-            }
-        }
-        User newUser = new User(name, stuId);
-        userList.add(newUser);
-        return newUser;
+    private static boolean infoIllegal(String name, int stuId) {
+        return name == null || stuId < 0 || name.equals("");
     }
 
-    private static boolean infoIllegal(String name, String stuId) {
-        return name == null || stuId == null ||
-                name.equals("") || stuId.equals("");
+    public int getUserId() {
+        return userId;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    /*
     public void borrowBook(Book toBorrow, Date date) {
         borrowed.add(new Record(this, toBorrow, date));
     }
@@ -61,10 +55,10 @@ public class User {
             throw new IllegalArgumentException("BOOK NOT FOUND!");
         }
         borrowed.remove(returnRecord);
-    }
+    }*/
 
     @Override
     public String toString() {
-        return String.format("%s %s",stuId, name);
+        return String.format("%d %s", userId, name);
     }
 }

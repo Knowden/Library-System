@@ -14,6 +14,16 @@ public class Date {
         }
     }
 
+    public Date(String date) throws IllegalArgumentException {
+        if (!date.matches("^\\d{4}-\\d{1,2}-\\d{1,2}")) {
+            throw new IllegalArgumentException("Date Should Be YYYY-MM-DD");
+        }
+        String[] parts = date.split("-");
+        this.day = Integer.parseInt(parts[2]);
+        this.mouth = Integer.parseInt(parts[1]);
+        this.year = Integer.parseInt(parts[0]);
+    }
+
     private boolean isDateLegal() {
         if (day < 0 || mouth < 0 || year < 0) {
             return false;

@@ -51,6 +51,7 @@ public class Record {
         BookDaoImpl bImpl = new BookDaoImpl();
         Book book = bImpl.getBookById(bookId);
         UserDAOImpl uImpl = new UserDAOImpl();
+        System.out.println(userId);
         User user = uImpl.getUserById(userId);
         return String.format("%s\n%s\nExpectedDate is %s", user.toString(), book.toString(), returnDate);
     }

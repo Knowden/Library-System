@@ -77,9 +77,12 @@ public class Server {
         center.deleteUser(toDelete);
     }
 
-    public boolean login(String name, String passWord) {
+    public User login(String name, String passWord) {
         User toLogin = center.getUser(name);
-        return toLogin.getPassWord().equals(passWord);
+        if (toLogin.getPassWord().equals(passWord)) {
+            return toLogin;
+        }
+        return null;
     }
 }
 

@@ -2,23 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28cbabc2-a014-4350-be0a-8072e68bbe32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/UserCenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/dao/record_dao/RecordDAOImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/book_dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/book_dao/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/book_dao/BookDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/book_dao/BookDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/record_dao/RecordDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/record_dao/RecordDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/dao/book_dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/dao/book_dao/BookDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/dao/book_dao/BookDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/dao/book_dao/BookDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/dao/record_dao/RecordDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/dao/record_dao/RecordDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/dao/record_dao/RecordDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/dao/record_dao/RecordDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/dao/user_dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/dao/user_dao/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/dao/user_dao/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/dao/user_dao/UserDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/main/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/main/Date.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/main/ISBN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/main/InquireType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/main/InquireType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/main/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/main/Library.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/main/Record.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/main/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/main/Server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/main/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/main/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/main/Simulate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/21-oo/main/Simulate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/21-oo/main/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/21-oo/dao/BookDaoImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/21-oo/dao/BookDaoImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/21-oo/main/LibraryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/21-oo/main/LibraryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base_data/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base_data/Record.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/record_dao/RecordDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/record_dao/RecordDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/user_dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/user_dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/user_dao/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/user_dao/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base_data/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base_data/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ISBN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base_data/ISBN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base_data/Record.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Simulate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Simulate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base_data/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dao/BookDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/dao/BookDaoImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/main/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/main/LibraryTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -48,10 +56,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/base_data/Book.java">
+        <entry file="file://$PROJECT_DIR$/src/dao/user_dao/UserDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="195">
+              <caret line="39" column="73" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/main/LibraryTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="53" column="36" lean-forward="true" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/dao/BookDaoImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="19" column="53" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Server.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1170">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,8 +103,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/base_data/Record.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="286">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/io/PrintStream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="820" selection-start-line="820" selection-end-line="820" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/record_dao/RecordDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="61" column="80" lean-forward="true" selection-start-line="61" selection-start-column="80" selection-end-line="61" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,10 +134,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dao/user_dao/UserDAO.java">
+        <entry file="file://$PROJECT_DIR$/test/dao/record_dao/RecordDAOImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+            <state relative-caret-position="465">
+              <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/book_dao/BookDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2685">
+              <caret line="179" selection-start-line="179" selection-end-line="179" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,8 +160,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -124,9 +201,7 @@
         <option value="$PROJECT_DIR$/src/dao/RecordDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/dao/record_dao/RecordDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Date.java" />
-        <option value="$PROJECT_DIR$/src/dao/record_dao/RecordDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/Record.java" />
-        <option value="$PROJECT_DIR$/test/main/LibraryTest.java" />
         <option value="$PROJECT_DIR$/test/dao/BookDaoImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/ISBN.java" />
         <option value="$PROJECT_DIR$/src/main/Book.java" />
@@ -134,14 +209,18 @@
         <option value="$PROJECT_DIR$/src/main/Library.java" />
         <option value="$PROJECT_DIR$/src/dao/book_dao/BookDao.java" />
         <option value="$PROJECT_DIR$/src/dao/book_dao/BookDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/dao/user_dao/UserDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/User.java" />
-        <option value="$PROJECT_DIR$/src/main/Simulate.java" />
         <option value="$PROJECT_DIR$/src/base_data.java" />
         <option value="$PROJECT_DIR$/src/main/UserCenter.java" />
         <option value="$PROJECT_DIR$/src/base_data/User.java" />
-        <option value="$PROJECT_DIR$/src/main/Server.java" />
         <option value="$PROJECT_DIR$/src/dao/user_dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/Server.java" />
+        <option value="$PROJECT_DIR$/test/main/LibraryTest.java" />
+        <option value="$PROJECT_DIR$/src/main/Simulate.java" />
+        <option value="$PROJECT_DIR$/src/dao/record_dao/RecordDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/dao/user_dao/UserDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/base_data/Record.java" />
+        <option value="$PROJECT_DIR$/test/dao/record_dao/RecordDAOImplTest.java" />
       </list>
     </option>
   </component>
@@ -172,7 +251,14 @@
               <item name="21-oo" type="b2602c69:ProjectViewProjectNode" />
               <item name="21-oo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="21-oo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="21-oo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="record_dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="21-oo" type="b2602c69:ProjectViewProjectNode" />
@@ -184,6 +270,13 @@
               <item name="21-oo" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="21-oo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="21-oo" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="record_dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="21-oo" type="b2602c69:ProjectViewProjectNode" />
@@ -205,12 +298,13 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553225599493" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553227553657" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -218,6 +312,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="dao.record_dao" />
       <recent name="dao" />
       <recent name="main" />
     </key>
@@ -240,7 +335,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BookDaoImplTest.addBook">
+  <component name="RunManager" selected="JUnit.RecordDAOImplTest.checkOneRecords">
     <configuration name="Simulate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Simulate" />
       <module name="21-oo" />
@@ -270,60 +365,61 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookDaoImplTest.getBookByISBN" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecordDAOImplTest.addRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="21-oo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dao.book_dao.*" />
+          <option name="PATTERN" value="dao.record_dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.BookDaoImplTest" />
-      <option name="METHOD_NAME" value="getBookByISBN" />
+      <option name="PACKAGE_NAME" value="dao.record_dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.record_dao.RecordDAOImplTest" />
+      <option name="METHOD_NAME" value="addRecord" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookDaoImplTest.getBookByKeyWord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecordDAOImplTest.checkOneRecords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="21-oo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dao.book_dao.*" />
+          <option name="PATTERN" value="dao.record_dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.BookDaoImplTest" />
-      <option name="METHOD_NAME" value="getBookByKeyWord" />
+      <option name="PACKAGE_NAME" value="dao.record_dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.record_dao.RecordDAOImplTest" />
+      <option name="METHOD_NAME" value="checkOneRecords" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecordDAOImplTest.deleteRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="21-oo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="base_data.*" />
+          <option name="PATTERN" value="dao.record_dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="main" />
-      <option name="MAIN_CLASS_NAME" value="main.LibraryTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="dao.record_dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.record_dao.RecordDAOImplTest" />
+      <option name="METHOD_NAME" value="deleteRecord" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RecordDAOImplTest.checkOneRecords" />
         <item itemvalue="JUnit.BookDaoImplTest.addBook" />
-        <item itemvalue="JUnit.BookDaoImplTest.getBookByISBN" />
-        <item itemvalue="JUnit.BookDaoImplTest.getBookByKeyWord" />
+        <item itemvalue="JUnit.RecordDAOImplTest.deleteRecord" />
+        <item itemvalue="JUnit.RecordDAOImplTest.addRecord" />
         <item itemvalue="Application.Simulate" />
-        <item itemvalue="JUnit.LibraryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -347,49 +443,81 @@
       <workItem from="1553164197995" duration="72000" />
       <workItem from="1553164307411" duration="218000" />
       <workItem from="1553164559902" duration="6028000" />
-      <workItem from="1553170722719" duration="3772000" />
+      <workItem from="1553170722719" duration="5725000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BookDaoImplTest_getBookByISBN - 2019.03.21 at 20h 11m 08s.xml">
-      <configuration name="BookDaoImplTest.getBookByISBN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookDaoImplTest_getBookByISBN - 2019.03.21 at 20h 12m 08s.xml">
-      <configuration name="BookDaoImplTest.getBookByISBN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookDaoImplTest_getBookByISBN - 2019.03.21 at 20h 13m 09s.xml">
-      <configuration name="BookDaoImplTest.getBookByISBN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookDaoImplTest_getBookByISBN - 2019.03.21 at 20h 14m 17s.xml">
-      <configuration name="BookDaoImplTest.getBookByISBN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookDaoImplTest_getBookByISBN - 2019.03.21 at 20h 14m 41s.xml">
-      <configuration name="BookDaoImplTest.getBookByISBN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookDaoImplTest_getBookByISBN - 2019.03.21 at 20h 14m 55s.xml">
-      <configuration name="BookDaoImplTest.getBookByISBN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookDaoImplTest_getBookByISBN - 2019.03.21 at 20h 15m 30s.xml">
-      <configuration name="BookDaoImplTest.getBookByISBN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookDaoImplTest_getBookByISBN - 2019.03.21 at 20h 17m 36s.xml">
-      <configuration name="BookDaoImplTest.getBookByISBN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookDaoImplTest_getBookByISBN - 2019.03.21 at 20h 19m 10s.xml">
-      <configuration name="BookDaoImplTest.getBookByISBN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookDaoImplTest_addBook - 2019.03.21 at 20h 19m 30s.xml">
+    <history-entry file="BookDaoImplTest_addBook - 2019.03.22 at 11h 59m 13s.xml">
       <configuration name="BookDaoImplTest.addBook" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RecordDAOImplTest_checkOneRecords - 2019.03.22 at 11h 59m 39s.xml">
+      <configuration name="RecordDAOImplTest.checkOneRecords" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RecordDAOImplTest_checkOneRecords - 2019.03.22 at 12h 00m 17s.xml">
+      <configuration name="RecordDAOImplTest.checkOneRecords" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RecordDAOImplTest_checkOneRecords - 2019.03.22 at 12h 01m 22s.xml">
+      <configuration name="RecordDAOImplTest.checkOneRecords" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RecordDAOImplTest_checkOneRecords - 2019.03.22 at 12h 01m 56s.xml">
+      <configuration name="RecordDAOImplTest.checkOneRecords" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RecordDAOImplTest_checkOneRecords - 2019.03.22 at 12h 02m 16s.xml">
+      <configuration name="RecordDAOImplTest.checkOneRecords" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RecordDAOImplTest_checkOneRecords - 2019.03.22 at 12h 03m 01s.xml">
+      <configuration name="RecordDAOImplTest.checkOneRecords" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RecordDAOImplTest_checkOneRecords - 2019.03.22 at 12h 03m 14s.xml">
+      <configuration name="RecordDAOImplTest.checkOneRecords" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RecordDAOImplTest_checkOneRecords - 2019.03.22 at 12h 05m 31s.xml">
+      <configuration name="RecordDAOImplTest.checkOneRecords" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RecordDAOImplTest_checkOneRecords - 2019.03.22 at 12h 05m 36s.xml">
+      <configuration name="RecordDAOImplTest.checkOneRecords" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44673000" />
+    <option name="totallyTimeSpent" value="46626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49910232" visible="true" weight="0.16237482" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.50089765" side_tool="true" weight="0.14020029" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="CheckStyle" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32891566" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32891566" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
+    <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49910232" visible="true" weight="0.16237482" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
@@ -420,42 +548,40 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49910232" visible="true" weight="0.1416309" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.50089765" side_tool="true" weight="0.14020029" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="CheckStyle" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32891566" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base_data/Record.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base_data/Record.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base_data/Record.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base_data/Record.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/lab1/Book.java" />
@@ -474,13 +600,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/command/BorrowCommand.java" />
     <entry file="file://$PROJECT_DIR$/src/command/Command.java" />
-    <entry file="file://$PROJECT_DIR$/src/dao/BaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="61" column="38" lean-forward="true" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/sql/PreparedStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -497,67 +616,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/main/LibraryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="52" column="42" lean-forward="true" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/dao/BookDaoImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/book_dao/BookDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2685">
-          <caret line="179" column="54" selection-start-line="179" selection-start-column="54" selection-end-line="179" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/book_dao/BookDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/record_dao/RecordDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/record_dao/RecordDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-222">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Simulate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -578,37 +640,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/base_data/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base_data/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/base_data/Date.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/UserCenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -631,44 +666,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/user_dao/UserDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/user_dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="926">
-          <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+        <state relative-caret-position="180">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base_data/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/BaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/UserCenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Simulate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="1170">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Library.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#232#233#0" expanded="true" />
-            <element signature="e#1942#1943#0" expanded="true" />
-            <element signature="e#1998#1999#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/user_dao/UserDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/record_dao/RecordDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/book_dao/BookDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2685">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dao/BookDaoImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/main/LibraryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="53" column="36" lean-forward="true" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/user_dao/UserDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="39" column="73" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="2993" selection-start-line="2993" selection-end-line="2993" />
+          <folding>
+            <element signature="e#117955#117956#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base_data/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/io/PrintStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="820" selection-start-line="820" selection-end-line="820" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/record_dao/RecordDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="61" column="80" lean-forward="true" selection-start-line="61" selection-start-column="80" selection-end-line="61" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dao/record_dao/RecordDAOImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
         </state>
       </provider>
     </entry>

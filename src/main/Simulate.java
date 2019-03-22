@@ -1,7 +1,6 @@
 package main;
 
 import base_data.User;
-import dao.user_dao.UserDAOImpl;
 
 import java.util.Scanner;
 
@@ -25,17 +24,15 @@ public class Simulate {
                 System.out.println("请输入用户名");
                 String name = keyBoard.nextLine();
 
-                UserDAOImpl impl = new UserDAOImpl();
-                User checkUser = impl.getUserByName(name);
-
                 System.out.println("请输入密码");
                 String passWord = keyBoard.nextLine();
 
-                if (checkUser.getPassWord().equals(passWord)) {
-                    user = checkUser;
-                }
+                user = server.login(name, passWord);
             } catch (Exception e) {
                 e.printStackTrace();
+            }
+            if (user == null) {
+                System.out.println("用户名或密码错误，请重新输入");
             }
         }
         System.out.println(user);

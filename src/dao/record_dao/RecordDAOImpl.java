@@ -36,10 +36,11 @@ public class RecordDAOImpl extends BaseDao implements RecordDAO {
     @Override
     public void deleteRecord(Record record) {
         try {
-            String delSql = "DELETE FROM Record WHERE user_id = ? AND book_id = ? ";
-            Object[] param = new Object[2];
+            String delSql = "DELETE FROM Record WHERE user_id = ? AND book_id = ? AND borrow_day = ?";
+            Object[] param = new Object[3];
             param[0] = record.getUserId();
             param[1] = record.getBookId();
+            param[2] = record.getBorrowDate().toString();
             executeSQL(delSql, param);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

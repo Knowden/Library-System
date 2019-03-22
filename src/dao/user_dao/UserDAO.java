@@ -11,4 +11,8 @@ interface UserDAO {
     public void addUser(User user);
 
     public void deleteUser(int userId);
+
+    public boolean nameExist(String name);
+
+    public boolean idExist(int userId);
 }

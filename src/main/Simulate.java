@@ -21,7 +21,7 @@ public class Simulate {
 
     private static void run() {
         while (user == null) {
-            login();
+            index();
         }
         welcome();
         while (true) {
@@ -61,6 +61,32 @@ public class Simulate {
         System.out.println("欢迎下次使用，再见");
     }
 
+    private static void index() {
+        System.out.println("请问您是否已有账号");
+        System.out.println("已有账号 1  注册新用户 2  退出 3");
+        try {
+            int type = Integer.parseInt(keyBoard.nextLine());
+            switch (type) {
+                case 1: {
+                    login();
+                    break;
+                }
+                case 2: {
+                    sign();
+                    break;
+                }
+                case 3: {
+                    System.exit(0);
+                }
+                default: {
+                    throw new IllegalArgumentException("Type Error!");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     private static void login() {
         try {
             System.out.println("请输入用户名");
@@ -75,6 +101,38 @@ public class Simulate {
         }
         if (user == null) {
             System.out.println("用户名或密码错误，请重新输入");
+        }
+    }
+
+    private static void sign() {
+        try {
+            while (user == null) {
+                System.out.println("请输入您的用户名");
+                String user_name = keyBoard.nextLine();
+                if (server.nameExist(user_name)) {
+                    System.out.println("该用户名已被注册");
+                    continue;
+                }
+                System.out.println("请输入您的用户ID");
+                int userId = Integer.parseInt(keyBoard.nextLine());
+                if (server.idExitst(userId)) {
+                    System.out.println("该ID已存在");
+                    continue;
+                }
+                System.out.println("请输入密码");
+                String pwd1 = keyBoard.nextLine();
+                System.out.println("请确认您的密码");
+                String pwd2 = keyBoard.nextLine();
+                if (pwd1.equals(pwd2)) {
+                    user = new User(user_name, pwd1, userId);
+                    server.addUser(user_name, pwd1, userId);
+                }
+                else {
+                    System.out.println("两次密码不符");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 

@@ -93,4 +93,34 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public boolean nameExist(String name) {
+        try {
+            Connection connect = getConnection();
+            String checkSql = "SELECT * FROM User WHERE user_name = ?";
+            PreparedStatement check = connect.prepareStatement(checkSql);
+            check.setObject(1, name);
+            ResultSet rst = check.executeQuery();
+            return rst.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean idExist(int userId) {
+        try {
+            Connection connect = getConnection();
+            String checkSql = "SELECT * FROM User WHERE user_id = ?";
+            PreparedStatement check = connect.prepareStatement(checkSql);
+            check.setObject(1, userId);
+            ResultSet rst = check.executeQuery();
+            return rst.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

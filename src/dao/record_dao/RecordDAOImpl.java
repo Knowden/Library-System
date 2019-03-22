@@ -34,13 +34,12 @@ public class RecordDAOImpl extends BaseDao implements RecordDAO {
     }
 
     @Override
-    public void deleteRecord(Record record) {
+    public void deleteRecord(int userId, int bookId) {
         try {
-            String delSql = "DELETE FROM Record WHERE user_id = ? AND book_id = ? AND borrow_day = ?";
-            Object[] param = new Object[3];
-            param[0] = record.getUserId();
-            param[1] = record.getBookId();
-            param[2] = record.getBorrowDate().toString();
+            String delSql = "DELETE FROM Record WHERE user_id = ? AND book_id = ?";
+            Object[] param = new Object[2];
+            param[0] = userId;
+            param[1] = bookId;
             executeSQL(delSql, param);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -67,14 +66,37 @@ public class RecordDAOImpl extends BaseDao implements RecordDAO {
                     returnDay = new Date(rst.getDate("return_day").toString());
                     records.add(new Record(userId, bookId, borrowDay, returnDay));
                 }
+                closeAll(connect, check, rst);
                 return records;
             }
             else {
+                closeAll(connect, check, rst);
                 throw new IllegalArgumentException("No Borrow Record!");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public boolean hadBorrow(int userId, int bookId) {
+        try {
+            Connection connect = getConnection();
+            String checkSql = "SELECT * FROM Record WHERE user_id = ? AND book_id = ?";
+            PreparedStatement check = connect.prepareStatement(checkSql);
+            check.setObject(1, userId);
+            check.setObject(2, bookId);
+            ResultSet rst = check.executeQuery();
+            if (rst.next()) {
+                closeAll(connect, check, rst);
+                return true;
+            }
+            closeAll(connect, check, rst);
+            return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

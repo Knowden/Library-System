@@ -21,9 +21,11 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
             if (rst.next()) {
                 int userId = rst.getInt("user_id");
                 String userPwd = rst.getString("user_pwd");
+                closeAll(connect, check, rst);
                 return new User(name, userPwd, userId);
             }
             else {
+                closeAll(connect, check, rst);
                 throw new IllegalArgumentException("User Not Found!");
             }
         } catch (SQLException e) {
@@ -43,9 +45,11 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
             if (rst.next()) {
                 String userName = rst.getString("user_name");
                 String userPwd = rst.getString("user_pwd");
+                closeAll(connect, check, rst);
                 return new User(userName, userPwd, id);
             }
             else {
+                closeAll(connect, check, rst);
                 throw new IllegalArgumentException("User Not Found!");
             }
         } catch (SQLException e) {
@@ -63,6 +67,7 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
             check.setObject(1, user.getUserId());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
+                closeAll(connect, check, rst);
                 throw new IllegalArgumentException("User Already Exist!");
             }
             String addSql = "INSERT INTO User VALUES (?, ?, ?)";
@@ -71,18 +76,18 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
             param[1] = user.getName();
             param[2] = user.getPassWord();
             executeSQL(addSql, param);
+            closeAll(connect, check, rst);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    public void deleteUser(User user) {
+    public void deleteUser(int userId) {
         try {
-            int id = user.getUserId();
             String delSql = "DELETE FROM User WHERE user_id = ?";
             Object[] param = new Object[1];
-            param[0] = id;
+            param[0] = userId;
             executeSQL(delSql, param);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

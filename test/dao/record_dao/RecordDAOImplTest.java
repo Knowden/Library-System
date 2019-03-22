@@ -27,7 +27,7 @@ public class RecordDAOImplTest {
     public void deleteRecord() {
         impl.addRecord(new Record(1,1, new Date("2019-3-22")));
         impl.addRecord(new Record(1,1, new Date("2019-4-1")));
-        impl.deleteRecord(new Record(1,1, new Date("2019-3-22")));
+        //impl.deleteRecord(new Record(1,1, new Date("2019-3-22")));
         //impl.deleteRecord(new Record(1,1, new Date("2019-4-1")));
         //impl.deleteRecord(new Record(3,1, new Date("2019-3-22")));
     }

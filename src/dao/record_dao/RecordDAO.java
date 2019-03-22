@@ -14,8 +14,10 @@ interface RecordDAO {
 
     public void addRecord(Record record);
 
-    public void deleteRecord(Record record);
+    public void deleteRecord(int userId, int bookId);
 
     public ArrayList<Record> checkOneRecords(int userId);
+
+    public boolean hadBorrow(int userId, int bookId);
 
 }

@@ -3,10 +3,14 @@ package main;
 import base_data.*;
 import dao.book_dao.BookDaoImpl;
 import dao.record_dao.RecordDAOImpl;
-
 import java.util.ArrayList;
+
 public class Library {
+
     private String name;
+
+    private BookDaoImpl bImpl = new BookDaoImpl();
+    private RecordDAOImpl rImpl = new RecordDAOImpl();
 
     public void setName(String name) {
         this.name = name;
@@ -16,13 +20,15 @@ public class Library {
         if (!isbn.checkISBN()) {
             throw new IllegalArgumentException("ISBN Illegal");
         }
-        BookDaoImpl impl = new BookDaoImpl();
-        return impl.getBookByISBN(isbn);
+        return bImpl.getBookByISBN(isbn);
     }
 
     public ArrayList<Book> getByKeyWord(String keyWord) {
-        BookDaoImpl impl = new BookDaoImpl();
-        return impl.getBooksByKeyWord(keyWord);
+        return bImpl.getBooksByKeyWord(keyWord);
+    }
+
+    public ArrayList<Record> getOneBooks(int userId) {
+        return rImpl.checkOneRecords(userId);
     }
 
     public void addBook(Book addBook) throws IllegalArgumentException{
@@ -30,38 +36,42 @@ public class Library {
             throw new IllegalArgumentException("Book Info Is Wrong!");
         }
         else {
-            BookDaoImpl impl = new BookDaoImpl();
-            impl.addBook(addBook);
+            bImpl.addBook(addBook);
         }
     }
 
-    public void borrowBook(User borrower, Book toBorrow, Date date) throws IllegalArgumentException {
-        BookDaoImpl bImpl = new BookDaoImpl();
-        if (bImpl.checkLeft(toBorrow) <= 0) {
+    public void borrowBook(ISBN isbn, User user, Date today) throws IllegalArgumentException {
+
+        if (bImpl.checkLeft(isbn) <= 0) {
             throw new IllegalArgumentException("This Book Not Left!");
         }
 
-        bImpl.takeOneBook(toBorrow);
+        int userId = user.getUserId();
+        int bookId = bImpl.getIdByISBN(isbn);
+        if (rImpl.hadBorrow(userId, bookId)) {
+            throw new IllegalArgumentException("You Had Borrowed This Book!");
+        }
 
-        int bookId = bImpl.getIdByISBN(toBorrow.getIsbn());
-        Record borrowRecord = new Record(borrower.getUserId(), bookId, date);
+        Record borrowRecord = new Record(userId, bookId, today);
 
-        RecordDAOImpl rImpl = new RecordDAOImpl();
         rImpl.addRecord(borrowRecord);
+        bImpl.takeOneBook(isbn);
     }
 
-    public void returnBook(Record borrowRecord) throws IllegalArgumentException{
-        RecordDAOImpl rImpl = new RecordDAOImpl();
-        rImpl.deleteRecord(borrowRecord);
-        int bookId = borrowRecord.getBookId();
-        BookDaoImpl bImpl = new BookDaoImpl();
-        Book returnBook = bImpl.getBookById(bookId);
-        bImpl.addBook(returnBook);
+    public void returnBook(ISBN isbn, User user) throws IllegalArgumentException{
+        int userId = user.getUserId();
+        int bookId = bImpl.getIdByISBN(isbn);
+
+        if (!rImpl.hadBorrow(userId, bookId)) {
+            throw new IllegalArgumentException("You Have Not Borrow This Book!");
+        }
+
+        rImpl.deleteRecord(userId, bookId);
+        bImpl.putBook(isbn);
     }
 
     @Override
     public String toString() {
         return String.format("%s Library", name);
     }
-
 }

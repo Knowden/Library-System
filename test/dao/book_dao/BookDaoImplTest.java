@@ -1,4 +1,4 @@
-package dao;
+package dao.book_dao;
 
 import dao.book_dao.BookDaoImpl;
 import base_data.Book;

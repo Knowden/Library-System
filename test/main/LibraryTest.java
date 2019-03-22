@@ -1,8 +1,6 @@
 package main;
 
-import base_data.Book;
-import base_data.ISBN;
-import base_data.User;
+import base_data.*;
 
 import java.util.ArrayList;
 
@@ -37,7 +35,7 @@ public class LibraryTest {
             System.out.println("----------------");
         }
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
-        books = library.getByKeyWord("Nocturne");
+        books = library.getByKeyWord("e");
         for (Book book : books) {
             System.out.println(book);
             System.out.println("----------------");
@@ -51,11 +49,11 @@ public class LibraryTest {
     @org.junit.Test
     public void borrowBook() {
         Book book = library.getBookByIsbn(new ISBN("9787040266511"));
-        library.borrowBook(new User(123), book, Server.today);
+        //library.borrowBook(new User(123), book, Server.today);
     }
 
     @org.junit.Test
     public void returnBook() {
+        //library.returnBook(new Record(17231122, 1, new Date("2019-3-22")));
     }
-
 }

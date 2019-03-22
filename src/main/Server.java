@@ -1,7 +1,6 @@
 package main;
 
 import base_data.*;
-import dao.book_dao.BookDaoImpl;
 
 import java.util.ArrayList;
 
@@ -17,53 +16,23 @@ public class Server {
         library.addBook(addBook);
     }
 
-    public void borrowBook(String isbn, User user) {
-        Book borrowBook = new Book(new ISBN(isbn));
-        library.borrowBook(user, borrowBook, today);
+    public void borrowBook(String isbnString, User user) {
+        ISBN isbn = new ISBN(isbnString);
+        library.borrowBook(isbn, user, today);
     }
 
-    public void returnBook(ISBN isbn, User user) {
-        BookDaoImpl impl = new BookDaoImpl();
-        int bookId = impl.getIdByISBN(isbn);
-        Record record = new Record(user.getUserId(), bookId, today);
-        library.returnBook(record);
+    public void returnBook(String isbnString, User user) {
+        ISBN isbn = new ISBN(isbnString);
+        library.returnBook(isbn, user);
     }
 
-    public ArrayList<Book> inquireBooks(InquireType type, Object obj)
-            throws IllegalArgumentException{
-        switch (type) {
-            case ISBN: {
-                try {
-                    ISBN isbn = (ISBN) obj;
-                    return inquireBooks(isbn);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            case KEYWORD: {
-                if (!(obj instanceof String)) {
-                    throw new IllegalArgumentException("String is need!");
-                }
-                try {
-                    String keyWord = (String) obj;
-                    return inquireBooks(keyWord);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            default: {
-                throw new IllegalArgumentException("INQUIRE TYPE ERROR!");
-            }
-        }
-    }
-
-    private ArrayList<Book> inquireBooks(ISBN isbn) {
+    public ArrayList<Book> inquireBooks(ISBN isbn) {
         ArrayList<Book> result = new ArrayList<>();
         result.add(library.getBookByIsbn(isbn));
         return result;
     }
 
-    private ArrayList<Book> inquireBooks(String keyWord) {
+    public ArrayList<Book> inquireBooks(String keyWord) {
         return library.getByKeyWord(keyWord);
     }
 
@@ -72,9 +41,13 @@ public class Server {
         center.addUser(toAdd);
     }
 
-    public void deleteUser(int id) {
-        User toDelete = new User(id);
-        center.deleteUser(toDelete);
+    public ArrayList<Record> checkOneRecords(User user) {
+        int userId = user.getUserId();
+        return library.getOneBooks(userId);
+    }
+
+    public void deleteUser(int userId) {
+        center.deleteUser(userId);
     }
 
     public User login(String name, String passWord) {
@@ -84,8 +57,4 @@ public class Server {
         }
         return null;
     }
-}
-
-enum InquireType {
-    ISBN, KEYWORD
 }

@@ -45,23 +45,41 @@ public class BookDaoImpl extends BaseDao implements BookDao {
                 param[5] = 1;
                 executeSQL(insertSql, param);
             }
+            closeAll(connect, check, rst);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    public int checkLeft(Book book) throws IllegalArgumentException {
+    public void putBook(ISBN isbn) {
+        try {
+            int left = checkLeft(isbn);
+            String putSql = "UPDATE Book SET book_left = ? WHERE book_isbn = ?";
+            Object[] param = new Object[2];
+            param[0] = left + 1;
+            param[1] = isbn.toString();
+            executeSQL(putSql, param);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public int checkLeft(ISBN isbn) throws IllegalArgumentException {
         try {
             Connection connect = getConnection();
             String checkSql = "SELECT book_amount FROM Book WHERE book_isbn = ?";
             PreparedStatement check = connect.prepareStatement(checkSql);
-            check.setObject(1, book.getIsbn().toString());
+            check.setObject(1, isbn.toString());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
-                return rst.getInt("book_amount");
+                int left = rst.getInt("book_amount");
+                closeAll(connect, check, rst);
+                return left;
             }
             else {
+                closeAll(connect, check, rst);
                 throw new IllegalArgumentException("Book Not Found!");
             }
         } catch (SQLException e) {
@@ -71,21 +89,23 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     }
 
     @Override
-    public void takeOneBook(Book book) throws IllegalArgumentException {
+    public void takeOneBook(ISBN isbn) throws IllegalArgumentException {
         try {
             Connection connect = getConnection();
             String checkSql = "SELECT book_left FROM Book WHERE book_isbn = ?";
             PreparedStatement check = connect.prepareStatement(checkSql);
-            check.setObject(1, book.getIsbn().toString());
+            check.setObject(1, isbn.toString());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
                 int left = rst.getInt("book_left");
                 String takeSql = "UPDATE Book SET book_left = ? WHERE book_isbn = ?";
                 Object[] param = new Object[2];
                 param[0] = left - 1;
-                param[1] = book.getIsbn().toString();
+                param[1] = isbn.toString();
                 executeSQL(takeSql, param);
+                closeAll(connect, check, rst);
             } else {
+                closeAll(connect, check, rst);
                 throw new IllegalArgumentException("Book Not Exist!");
             }
         } catch (SQLException | ClassNotFoundException e) {
@@ -105,9 +125,11 @@ public class BookDaoImpl extends BaseDao implements BookDao {
                 String book_name = rst.getString("book_name");
                 double book_price = rst.getDouble("book_price");
                 String book_author = rst.getString("book_author");
+                closeAll(connect, check, rst);
                 return new Book(isbn, book_name, book_author, book_price);
             }
             else {
+                closeAll(connect, check, rst);
                 throw new IllegalArgumentException("The Book Not Exist!");
             }
         } catch (SQLException e) {
@@ -134,10 +156,38 @@ public class BookDaoImpl extends BaseDao implements BookDao {
                     isbn = rst.getString("book_isbn");
                     books.add(getBookByISBN(new ISBN(isbn)));
                 }
+                closeAll(connect, check, rst);
                 return books;
             }
             else {
+                closeAll(connect, check, rst);
                 throw new IllegalArgumentException("The Book Not Found!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public Book getBookById(int bookId) {
+        try {
+            Connection connect = getConnection();
+            String checkSql = "SELECT * FROM Book WHERE book_id = ?";
+            PreparedStatement check = connect.prepareStatement(checkSql);
+            check.setObject(1, bookId);
+            ResultSet rst = check.executeQuery();
+            if (rst.next()) {
+                String book_name = rst.getString("book_name");
+                double book_price = rst.getDouble("book_price");
+                ISBN isbn = new ISBN(rst.getString("book_isbn"));
+                String book_author = rst.getString("book_author");
+                closeAll(connect, check, rst);
+                return new Book(isbn, book_name, book_author, book_price);
+            }
+            else {
+                closeAll(connect, check, rst);
+                throw new IllegalArgumentException("The Book Not Exist!");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -154,34 +204,16 @@ public class BookDaoImpl extends BaseDao implements BookDao {
             check.setObject(1, isbn.toString());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
-                return rst.getInt("book_id");
+                int bookId =  rst.getInt("book_id");
+                closeAll(connect, check, rst);
+                return bookId;
             } else {
+                closeAll(connect, check, rst);
                 throw new IllegalArgumentException("ISBN Not Found!");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return -1;
-    }
-
-    @Override
-    public Book getBookById(int id) throws IllegalArgumentException{
-        try {
-            Connection connect = getConnection();
-            String checkSql = "SELECT * FROM Book WHERE book_id = ?";
-            PreparedStatement check = connect.prepareStatement(checkSql);
-            check.setObject(1, id);
-            ResultSet rst = check.executeQuery();
-            if (rst.next()) {
-                String isbn = rst.getString("book_isbn");
-                return getBookByISBN(new ISBN(isbn));
-            }
-            else {
-                throw new IllegalArgumentException("ID Not Found!");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }

@@ -1,4 +1,4 @@
-package main;
+package base_data;
 
 public class Book {
     private ISBN isbn;

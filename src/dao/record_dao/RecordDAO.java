@@ -6,7 +6,7 @@ package dao.record_dao;
  * Original author: Nocturne
  */
 
-import main.Record;
+import base_data.Record;
 
 import java.util.ArrayList;
 

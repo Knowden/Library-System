@@ -1,5 +1,8 @@
 package main;
 
+import base_data.User;
+import dao.user_dao.UserDAOImpl;
+
 import java.util.Scanner;
 
 /**
@@ -19,11 +22,18 @@ public class Simulate {
         while (user == null) {
             try {
                 Scanner keyBoard = new Scanner(System.in);
-                System.out.println("请输入ID");
-                int stuId = Integer.parseInt(keyBoard.nextLine());
                 System.out.println("请输入用户名");
                 String name = keyBoard.nextLine();
-                user = new User(name, stuId);
+
+                UserDAOImpl impl = new UserDAOImpl();
+                User checkUser = impl.getUserByName(name);
+
+                System.out.println("请输入密码");
+                String passWord = keyBoard.nextLine();
+
+                if (checkUser.getPassWord().equals(passWord)) {
+                    user = checkUser;
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }

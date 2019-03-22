@@ -1,7 +1,7 @@
 package dao.user_dao;
 
 import dao.BaseDao;
-import main.User;
+import base_data.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,7 +20,8 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
                 int userId = rst.getInt("user_id");
-                return new User(name, userId);
+                String userPwd = rst.getString("user_pwd");
+                return new User(name, userPwd, userId);
             }
             else {
                 throw new IllegalArgumentException("User Not Found!");
@@ -41,7 +42,8 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
                 String userName = rst.getString("user_name");
-                return new User(userName, id);
+                String userPwd = rst.getString("user_pwd");
+                return new User(userName, userPwd, id);
             }
             else {
                 throw new IllegalArgumentException("User Not Found!");

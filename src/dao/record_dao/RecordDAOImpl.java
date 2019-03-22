@@ -1,8 +1,8 @@
 package dao.record_dao;
 
 import dao.BaseDao;
-import main.Date;
-import main.Record;
+import base_data.Date;
+import base_data.Record;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

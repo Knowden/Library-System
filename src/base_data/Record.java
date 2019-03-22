@@ -1,4 +1,4 @@
-package main;
+package base_data;
 
 import dao.book_dao.BookDaoImpl;
 import dao.user_dao.UserDAOImpl;

@@ -1,5 +1,6 @@
 package main;
 
+import base_data.*;
 import dao.book_dao.BookDaoImpl;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 public class Server {
 
     private Library library = new Library();
+    private UserCenter center = new UserCenter();
 
     public static Date today = new Date(2019, 3, 20);
 
@@ -65,7 +67,20 @@ public class Server {
         return library.getByKeyWord(keyWord);
     }
 
+    public void addUser(String name, String passWord, int id) {
+        User toAdd = new User(name, passWord, id);
+        center.addUser(toAdd);
+    }
 
+    public void deleteUser(int id) {
+        User toDelete = new User(id);
+        center.deleteUser(toDelete);
+    }
+
+    public boolean login(String name, String passWord) {
+        User toLogin = center.getUser(name);
+        return toLogin.getPassWord().equals(passWord);
+    }
 }
 
 enum InquireType {

@@ -1,8 +1,8 @@
 package dao;
 
 import dao.book_dao.BookDaoImpl;
-import main.Book;
-import main.ISBN;
+import base_data.Book;
+import base_data.ISBN;
 import org.junit.Test;
 
 import java.util.ArrayList;

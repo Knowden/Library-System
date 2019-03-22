@@ -1,6 +1,6 @@
 package dao.user_dao;
 
-import main.User;
+import base_data.User;
 
 interface UserDAO {
 
@@ -11,5 +11,4 @@ interface UserDAO {
     public void addUser(User user);
 
     public void deleteUser(User user);
-
 }

@@ -1,7 +1,7 @@
 package dao.book_dao;
 
-import main.Book;
-import main.ISBN;
+import base_data.Book;
+import base_data.ISBN;
 
 import java.util.ArrayList;
 

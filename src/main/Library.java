@@ -1,5 +1,6 @@
 package main;
 
+import base_data.*;
 import dao.book_dao.BookDaoImpl;
 import dao.record_dao.RecordDAOImpl;
 
@@ -34,7 +35,7 @@ public class Library {
         }
     }
 
-    public void borrowBook(User borrower,Book toBorrow, Date date) throws IllegalArgumentException {
+    public void borrowBook(User borrower, Book toBorrow, Date date) throws IllegalArgumentException {
         BookDaoImpl bImpl = new BookDaoImpl();
         if (bImpl.checkLeft(toBorrow) <= 0) {
             throw new IllegalArgumentException("This Book Not Left!");

@@ -1,8 +1,8 @@
 package dao.book_dao;
 
 import dao.BaseDao;
-import main.Book;
-import main.ISBN;
+import base_data.Book;
+import base_data.ISBN;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,4 +1,4 @@
-package main;
+package base_data;
 
 import java.util.ArrayList;
 
@@ -10,14 +10,20 @@ import java.util.ArrayList;
 public class User {
 
     private String name;
+    private String passWord;
     private int userId;
 
-    public User(String name, int userId) throws IllegalArgumentException{
+    public User(String name, String passWord, int userId) throws IllegalArgumentException{
         if (infoIllegal(name, userId)) {
             throw new IllegalArgumentException("User Info Error!");
         }
         this.name = name;
+        this.passWord = passWord;
         this.userId = userId;
+    }
+
+    public User(int id) {
+        this.userId = id;
     }
 
     private static boolean infoIllegal(String name, int stuId) {
@@ -30,6 +36,10 @@ public class User {
 
     public String getName() {
         return name;
+    }
+
+    public String getPassWord() {
+        return passWord;
     }
 
     /*

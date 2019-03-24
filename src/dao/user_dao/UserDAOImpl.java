@@ -61,23 +61,9 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
     @Override
     public void addUser(User user) throws IllegalArgumentException {
         try {
-            Connection connect = getConnection();
-            String checkSql = "SELECT * FROM User WHERE user_id = ?";
-            PreparedStatement check = connect.prepareStatement(checkSql);
-            check.setObject(1, user.getUserId());
-            ResultSet rst = check.executeQuery();
-            if (rst.next()) {
-                closeAll(connect, check, rst);
-                throw new IllegalArgumentException("User Already Exist!");
-            }
             String addSql = "INSERT INTO User VALUES (?, ?, ?)";
-            Object[] param = new Object[3];
-            param[0] = user.getUserId();
-            param[1] = user.getName();
-            param[2] = user.getPassWord();
-            executeSQL(addSql, param);
-            closeAll(connect, check, rst);
-        } catch (SQLException | ClassNotFoundException e) {
+            executeSQL(addSql, user.getUserId(), user.getName(), user.getPassWord());
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -86,41 +72,9 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
     public void deleteUser(int userId) {
         try {
             String delSql = "DELETE FROM User WHERE user_id = ?";
-            Object[] param = new Object[1];
-            param[0] = userId;
-            executeSQL(delSql, param);
+            executeSQL(delSql, userId);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public boolean nameExist(String name) {
-        try {
-            Connection connect = getConnection();
-            String checkSql = "SELECT * FROM User WHERE user_name = ?";
-            PreparedStatement check = connect.prepareStatement(checkSql);
-            check.setObject(1, name);
-            ResultSet rst = check.executeQuery();
-            return rst.next();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    @Override
-    public boolean idExist(int userId) {
-        try {
-            Connection connect = getConnection();
-            String checkSql = "SELECT * FROM User WHERE user_id = ?";
-            PreparedStatement check = connect.prepareStatement(checkSql);
-            check.setObject(1, userId);
-            ResultSet rst = check.executeQuery();
-            return rst.next();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
     }
 }

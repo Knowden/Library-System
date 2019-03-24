@@ -16,10 +16,7 @@ public class Library {
         this.name = name;
     }
 
-    public Book getBookByIsbn(ISBN isbn) throws IllegalArgumentException{
-        if (!isbn.checkISBN()) {
-            throw new IllegalArgumentException("ISBN Illegal");
-        }
+    public Book getBookByIsbn(ISBN isbn) throws IllegalArgumentException {
         return bImpl.getBookByISBN(isbn);
     }
 
@@ -31,7 +28,7 @@ public class Library {
         return rImpl.checkOneRecords(userId);
     }
 
-    public void addBook(Book addBook) throws IllegalArgumentException{
+    public void addBook(Book addBook) throws IllegalArgumentException {
         if (addBook.getClass() != Book.class) {
             throw new IllegalArgumentException("Book Info Is Wrong!");
         }
@@ -48,9 +45,6 @@ public class Library {
 
         int userId = user.getUserId();
         int bookId = bImpl.getIdByISBN(isbn);
-        if (rImpl.hadBorrow(userId, bookId)) {
-            throw new IllegalArgumentException("You Had Borrowed This Book!");
-        }
 
         Record borrowRecord = new Record(userId, bookId, today);
 
@@ -58,13 +52,9 @@ public class Library {
         bImpl.takeOneBook(isbn);
     }
 
-    public void returnBook(ISBN isbn, User user) throws IllegalArgumentException{
+    public void returnBook(ISBN isbn, User user) throws IllegalArgumentException {
         int userId = user.getUserId();
         int bookId = bImpl.getIdByISBN(isbn);
-
-        if (!rImpl.hadBorrow(userId, bookId)) {
-            throw new IllegalArgumentException("You Have Not Borrow This Book!");
-        }
 
         rImpl.deleteRecord(userId, bookId);
         bImpl.putBook(isbn);

@@ -3,9 +3,9 @@ package base_data;
 import java.util.regex.Pattern;
 
 public class ISBN {
-    final private String isbn;
+    private final String isbn;
 
-    public ISBN(String isbn) throws IllegalArgumentException{
+    public ISBN(String isbn) throws IllegalArgumentException {
         this.isbn = isbn.replaceAll("-", "");
         if (!checkISBN()) {
             throw new IllegalArgumentException("Illegal ISBN");

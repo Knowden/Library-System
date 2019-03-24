@@ -18,6 +18,4 @@ interface RecordDAO {
 
     public ArrayList<Record> checkOneRecords(int userId);
 
-    public boolean hadBorrow(int userId, int bookId);
-
 }

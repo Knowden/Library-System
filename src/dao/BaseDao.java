@@ -9,10 +9,10 @@ import java.sql.*;
  */
 public class BaseDao {
 
-    private final static String driver = "com.mysql.jdbc.Driver";
-    private final static String url = "jdbc:mysql://127.0.0.1:3306/LibraryServer?useSSL=false";
-    private final static String user = "root";
-    private final static String password = "hanwenzhao";
+    private static final String driver = "com.mysql.cj.jdbc.Driver";
+    private static final String url = "jdbc:mysql://127.0.0.1:3306/LibraryServer?useSSL=false";
+    private static final String user = "root";
+    private static final String password = "hanwenzhao";
 
     static {
         try {
@@ -27,18 +27,22 @@ public class BaseDao {
     }
 
     public static void closeAll(Connection connect, Statement state, ResultSet result) throws SQLException {
+        closeAll(connect, state);
+        if (result != null) {
+            result.close();
+        }
+    }
+
+    public static void closeAll(Connection connect, Statement state) throws SQLException {
         if (connect != null) {
             connect.close();
         }
         if (state != null) {
             state.close();
         }
-        if (result != null) {
-            result.close();
-        }
     }
 
-    public int executeSQL(String preparedSql, Object[] param) throws ClassNotFoundException {
+    public int executeSQL(String preparedSql, Object... param) throws ClassNotFoundException {
         Connection connect = null;
         PreparedStatement preState = null;
         ResultSet result = null;

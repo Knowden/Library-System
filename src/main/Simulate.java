@@ -109,16 +109,8 @@ public class Simulate {
             while (user == null) {
                 System.out.println("请输入您的用户名");
                 String user_name = keyBoard.nextLine();
-                if (server.nameExist(user_name)) {
-                    System.out.println("该用户名已被注册");
-                    continue;
-                }
                 System.out.println("请输入您的用户ID");
                 int userId = Integer.parseInt(keyBoard.nextLine());
-                if (server.idExitst(userId)) {
-                    System.out.println("该ID已存在");
-                    continue;
-                }
                 System.out.println("请输入密码");
                 String pwd1 = keyBoard.nextLine();
                 System.out.println("请确认您的密码");

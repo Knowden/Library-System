@@ -21,31 +21,21 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     @Override
     public void addBook(Book book) {
         try {
-            Connection connect = getConnection();
+            Connection connection = getConnection();
             String checkSql = "SELECT * FROM Book WHERE book_isbn = ?";
-            PreparedStatement check = connect.prepareStatement(checkSql);
+            PreparedStatement check = connection.prepareStatement(checkSql);
             check.setObject(1, book.getIsbn().toString());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
                 int amount = rst.getInt("book_amount") + 1;
                 String updateSql = "UPDATE Book SET book_amount = ? WHERE book_isbn = ?";
-                Object[] param = new Object[2];
-                param[0] = amount;
-                param[1] = book.getIsbn().toString();
-                executeSQL(updateSql, param);
+                executeSQL(updateSql, amount, book.getIsbn().toString());
             }
             else {
                 String insertSql = "INSERT INTO book VALUES (null, ?, ?, ?, ?, ?, ?)";
-                Object[] param = new Object[6];
-                param[0] = book.getName();
-                param[1] = book.getIsbn().toString();
-                param[2] = book.getPrice();
-                param[3] = book.getAuthor();
-                param[4] = 1;
-                param[5] = 1;
-                executeSQL(insertSql, param);
+                executeSQL(insertSql, book.getName(), book.getIsbn().toString(), book.getPrice(), book.getAuthor(), 1, 1);
             }
-            closeAll(connect, check, rst);
+            closeAll(connection, check, rst);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -56,10 +46,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         try {
             int left = checkLeft(isbn);
             String putSql = "UPDATE Book SET book_left = ? WHERE book_isbn = ?";
-            Object[] param = new Object[2];
-            param[0] = left + 1;
-            param[1] = isbn.toString();
-            executeSQL(putSql, param);
+            executeSQL(putSql, left + 1, isbn.toString());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -68,18 +55,18 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     @Override
     public int checkLeft(ISBN isbn) throws IllegalArgumentException {
         try {
-            Connection connect = getConnection();
+            Connection connection = getConnection();
             String checkSql = "SELECT book_amount FROM Book WHERE book_isbn = ?";
-            PreparedStatement check = connect.prepareStatement(checkSql);
+            PreparedStatement check = connection.prepareStatement(checkSql);
             check.setObject(1, isbn.toString());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
                 int left = rst.getInt("book_amount");
-                closeAll(connect, check, rst);
+                closeAll(connection, check, rst);
                 return left;
             }
             else {
-                closeAll(connect, check, rst);
+                closeAll(connection, check, rst);
                 throw new IllegalArgumentException("Book Not Found!");
             }
         } catch (SQLException e) {
@@ -91,21 +78,18 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     @Override
     public void takeOneBook(ISBN isbn) throws IllegalArgumentException {
         try {
-            Connection connect = getConnection();
+            Connection connection = getConnection();
             String checkSql = "SELECT book_left FROM Book WHERE book_isbn = ?";
-            PreparedStatement check = connect.prepareStatement(checkSql);
+            PreparedStatement check = connection.prepareStatement(checkSql);
             check.setObject(1, isbn.toString());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
                 int left = rst.getInt("book_left");
                 String takeSql = "UPDATE Book SET book_left = ? WHERE book_isbn = ?";
-                Object[] param = new Object[2];
-                param[0] = left - 1;
-                param[1] = isbn.toString();
-                executeSQL(takeSql, param);
-                closeAll(connect, check, rst);
+                executeSQL(takeSql, left - 1, isbn.toString());
+                closeAll(connection, check, rst);
             } else {
-                closeAll(connect, check, rst);
+                closeAll(connection, check, rst);
                 throw new IllegalArgumentException("Book Not Exist!");
             }
         } catch (SQLException | ClassNotFoundException e) {
@@ -116,20 +100,20 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     @Override
     public Book getBookByISBN(ISBN isbn) throws IllegalArgumentException {
         try {
-            Connection connect = getConnection();
+            Connection connection = getConnection();
             String checkSql = "SELECT * FROM Book WHERE book_isbn = ?";
-            PreparedStatement check = connect.prepareStatement(checkSql);
+            PreparedStatement check = connection.prepareStatement(checkSql);
             check.setObject(1, isbn.toString());
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
-                String book_name = rst.getString("book_name");
-                double book_price = rst.getDouble("book_price");
-                String book_author = rst.getString("book_author");
-                closeAll(connect, check, rst);
-                return new Book(isbn, book_name, book_author, book_price);
+                String bookName = rst.getString("book_name");
+                double bookPrice = rst.getDouble("book_price");
+                String bookAuthor = rst.getString("book_author");
+                closeAll(connection, check, rst);
+                return new Book(isbn, bookName, bookAuthor, bookPrice);
             }
             else {
-                closeAll(connect, check, rst);
+                closeAll(connection, check, rst);
                 throw new IllegalArgumentException("The Book Not Exist!");
             }
         } catch (SQLException e) {
@@ -141,10 +125,10 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     @Override
     public ArrayList<Book> getBooksByKeyWord(String keyWord) throws IllegalArgumentException {
         try {
-            Connection connect = getConnection();
+            Connection connection = getConnection();
             String checkSql = "SELECT * FROM Book WHERE book_name LIKE ? OR book_author LIKE ?";
-            PreparedStatement check = connect.prepareStatement(checkSql);
             String pattern = "%" + keyWord + "%";
+            PreparedStatement check = connection.prepareStatement(checkSql);
             check.setObject(1, pattern);
             check.setObject(2, pattern);
             ResultSet rst = check.executeQuery();
@@ -156,11 +140,11 @@ public class BookDaoImpl extends BaseDao implements BookDao {
                     isbn = rst.getString("book_isbn");
                     books.add(getBookByISBN(new ISBN(isbn)));
                 }
-                closeAll(connect, check, rst);
+                closeAll(connection, check, rst);
                 return books;
             }
             else {
-                closeAll(connect, check, rst);
+                closeAll(connection, check, rst);
                 throw new IllegalArgumentException("The Book Not Found!");
             }
         } catch (SQLException e) {
@@ -178,12 +162,12 @@ public class BookDaoImpl extends BaseDao implements BookDao {
             check.setObject(1, bookId);
             ResultSet rst = check.executeQuery();
             if (rst.next()) {
-                String book_name = rst.getString("book_name");
-                double book_price = rst.getDouble("book_price");
                 ISBN isbn = new ISBN(rst.getString("book_isbn"));
-                String book_author = rst.getString("book_author");
+                String bookName = rst.getString("book_name");
+                String bookAuthor = rst.getString("book_author");
+                double bookPrice = rst.getDouble("book_price");
                 closeAll(connect, check, rst);
-                return new Book(isbn, book_name, book_author, book_price);
+                return new Book(isbn, bookName, bookAuthor, bookPrice);
             }
             else {
                 closeAll(connect, check, rst);

@@ -22,12 +22,4 @@ public class UserCenter {
     public User getUser(String name) {
         return impl.getUserByName(name);
     }
-
-    public boolean nameExist(String name) {
-        return impl.nameExist(name);
-    }
-
-    public boolean idExist(int id) {
-        return impl.idExist(id);
-    }
 }

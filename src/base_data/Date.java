@@ -9,7 +9,7 @@ public class Date {
         this.day = day;
         this.mouth = mouth;
         this.year = year;
-        if(!isDateLegal()) {
+        if (!isDateLegal()) {
             throw new IllegalArgumentException("Date Error");
         }
     }
@@ -120,17 +120,4 @@ public class Date {
     public String toString() {
         return String.format("%d-%d-%d", year, mouth, day);
     }
-
-    public int getYear() {
-        return year;
-    }
-
-    public int getMouth() {
-        return mouth;
-    }
-
-    public int getDay() {
-        return day;
-    }
-
 }

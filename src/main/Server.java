@@ -57,12 +57,4 @@ public class Server {
         }
         return null;
     }
-
-    public boolean nameExist(String name) {
-        return center.nameExist(name);
-    }
-
-    public boolean idExitst(int id) {
-        return center.idExist(id);
-    }
 }

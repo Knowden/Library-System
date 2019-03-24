@@ -38,12 +38,11 @@ public class Book {
 
     @Override
     public String toString() {
-        StringBuilder info = new StringBuilder();
-        info.append(String.format("Name : %s\n", name));
-        info.append(String.format("ISBN : %s\n", isbn));
-        info.append(String.format("Author : %s\n", author));
-        info.append(String.format("Price : %s", price));
-        return info.toString();
+        String info = String.format("Name : %s\n", name);
+        info += String.format("ISBN : %s\n", isbn);
+        info += String.format("Author : %s\n", author);
+        info += String.format("Price : %s", price);
+        return info;
     }
 
     public boolean equals(Book compareBook) {
